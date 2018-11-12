@@ -1,6 +1,8 @@
 Hi <%= first_name %> <%= last_name %>
-<form action="/age" method="post">
-  How old are you?: <input type="text" name="age">
+you are <%= age %> years old
+<form action="/favoritecolor" method="post">
+  What's your favorite color?: <input type="text" name="favcol">
+  <input type="hidden" name="age" value=<%= age %>>
   <input type="hidden" name="fname" value=<%= first_name %>>
   <input type="hidden" name="lname" value=<%= last_name %>>
   <input type="submit" value="submit">
