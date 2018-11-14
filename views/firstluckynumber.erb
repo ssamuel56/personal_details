@@ -1,7 +1,7 @@
 Hi <%= first_name %> <%= last_name %>
 you are <%= age %> years old and your favorite color is <%= favcol %>
 <form action="/firstluckynumber" method="post">
-  What's one of your lucky numbers?: <input type="text" name="favnum1">
+  What's one of your lucky numbers?: <input type="number" name="favnum1">
   <input type="hidden" name="favcol" value=<%= favcol %>>
   <input type="hidden" name="age" value=<%= age %>>
   <input type="hidden" name="fname" value=<%= first_name %>>

@@ -1,4 +1,8 @@
 require 'sinatra'
+require_relative 'add.rb'
+require_relative 'multiply.rb'
+require_relative 'subtract.rb'
+require_relative 'divide.rb'
 
 get '/' do
   erb :name
@@ -133,10 +137,13 @@ get '/end' do
   last_name = params[:lname]
   age = params[:age]
   favcol = params[:favcol]
-  favnum1 = params[:favnum1]
-  favnum2 = params[:favnum2]
-  favnum3 = params[:favnum3]
+  favnum1 = params[:favnum1].to_i
+  favnum2 = params[:favnum2].to_i
+  favnum3 = params[:favnum3].to_i
   favanimal = params[:favanimal]
-  erb :end, :locals => {first_name: first_name, last_name: last_name, age: age, favcol: favcol, favnum1: favnum1, favnum2: favnum2, favnum3: favnum3, favanimal: favanimal}
+  add_total = addition(addition(favnum1, favnum2), favnum3)
+  multiply_total = multiply(multiply(favnum1, favnum2), favnum3)
+  subtract_total = subtract(subtract(favnum1, favnum2), favnum3)
+  divide_total = divide(divide(favnum1, favnum2), favnum3)
+  erb :end, :locals => {first_name: first_name, last_name: last_name, age: age, favcol: favcol, favnum1: favnum1, favnum2: favnum2, favnum3: favnum3, favanimal: favanimal, add_total: add_total, multiply_total: multiply_total, subtract_total: subtract_total, divide_total: divide_total}
 end
-#Age, Fav color, 3 lucky numbers, favorite animal
