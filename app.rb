@@ -104,4 +104,39 @@ post '/thirdluckynumber' do
   favnum3 = params[:favnum3]
   redirect 'favoriteanimal?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&favcol=' + favcol + '&favnum1=' + favnum1 + '&favnum2=' + favnum2 + '&favnum3=' + favnum3
 end
+
+get '/favoriteanimal' do
+  first_name = params[:fname]
+  last_name = params[:lname]
+  age = params[:age]
+  favcol = params[:favcol]
+  favnum1 = params[:favnum1]
+  favnum2 = params[:favnum2]
+  favnum3 = params[:favnum3]
+  erb :favoriteanimal, :locals => {first_name: first_name, last_name: last_name, age: age, favcol: favcol, favnum1: favnum1, favnum2: favnum2, favnum3: favnum3}
+end
+
+post '/favoriteanimal' do
+  first_name = params[:fname]
+  last_name = params[:lname]
+  age = params[:age]
+  favcol = params[:favcol]
+  favnum1 = params[:favnum1]
+  favnum2 = params[:favnum2]
+  favnum3 = params[:favnum3]
+  favanimal = params[:favanimal]
+  redirect 'end?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&favcol=' + favcol + '&favnum1=' + favnum1 + '&favnum2=' + favnum2 + '&favnum3=' + favnum3 + '&favanimal=' + favanimal
+end
+
+get '/end' do
+  first_name = params[:fname]
+  last_name = params[:lname]
+  age = params[:age]
+  favcol = params[:favcol]
+  favnum1 = params[:favnum1]
+  favnum2 = params[:favnum2]
+  favnum3 = params[:favnum3]
+  favanimal = params[:favanimal]
+  erb :end, :locals => {first_name: first_name, last_name: last_name, age: age, favcol: favcol, favnum1: favnum1, favnum2: favnum2, favnum3: favnum3, favanimal: favanimal}
+end
 #Age, Fav color, 3 lucky numbers, favorite animal

@@ -1,0 +1,12 @@
+Hi <%= first_name %> <%= last_name %>
+<form action="/favoriteanimal" method="post">
+  Favorite animal: <input type="text" name="favanimal">
+  <input type="hidden" name="favnum3" value=<%= favnum3 %>>
+  <input type="hidden" name="favnum2" value=<%= favnum2 %>>
+  <input type="hidden" name="favnum1" value=<%= favnum1 %>>
+  <input type="hidden" name="favcol" value=<%= favcol %>>
+  <input type="hidden" name="age" value=<%= age %>>
+  <input type="hidden" name="fname" value=<%= first_name %>>
+  <input type="hidden" name="lname" value=<%= last_name %>>
+  <input type="submit" value="submit">
+</form>
